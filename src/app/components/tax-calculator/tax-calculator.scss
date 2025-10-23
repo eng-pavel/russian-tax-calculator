@@ -1,0 +1,141 @@
+.calculator-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.calculator-input {
+  margin-bottom: 1.5rem;
+
+  .input-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .salary-input {
+    width: 100%;
+  }
+
+  .input-hint {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-secondary-color);
+    font-size: 0.875rem;
+  }
+}
+
+.calculator-results {
+  margin-top: 1.5rem;
+}
+
+.results-divider {
+  margin: 1.5rem 0;
+}
+
+.results-title {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.tax-breakdown {
+  margin: 1rem 0;
+}
+
+.tax-bracket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--surface-d);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.bracket-rate {
+  font-weight: bold;
+  color: var(--primary-color);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.bracket-amount {
+  flex: 1;
+  text-align: center;
+  color: var(--text-secondary-color);
+}
+
+.bracket-tax {
+  font-weight: bold;
+  color: var(--red-500);
+  width: 120px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.total-section {
+  margin-top: 1rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}
+
+.total-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.total-tax-amount {
+  font-weight: bold;
+  color: var(--red-500);
+}
+
+.final-amount-section {
+  background: var(--blue-50);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  margin-top: 1rem;
+}
+
+.final-amount {
+  margin: 0;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .calculator-container {
+    padding: 1rem;
+  }
+
+  .tax-bracket-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .bracket-amount {
+    text-align: left;
+  }
+
+  .bracket-tax {
+    text-align: left;
+    width: auto;
+  }
+
+  .final-amount {
+    font-size: 1.25rem;
+  }
+}

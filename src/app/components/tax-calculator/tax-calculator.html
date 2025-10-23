@@ -1,0 +1,50 @@
+<div class="calculator-container">
+  <p-card header="Калькулятор налогов РФ с прогрессивной шкалой">
+    <div class="calculator-input">
+      <label for="salaryInput" class="input-label">Месячный доход до налогов (руб.):</label>
+      <p-inputNumber
+        id="salaryInput"
+        [ngModel]="monthlySalary()"
+        (ngModelChange)="onSalaryChange($event)"
+        mode="decimal"
+        [min]="0"
+        [max]="100000000"
+        [minFractionDigits]="0"
+        [maxFractionDigits]="0"
+        inputId="salary"
+        placeholder="Введите сумму"
+        class="salary-input"
+      ></p-inputNumber>
+      <span class="input-hint">Введите число без запятых и пробелов</span>
+    </div>
+
+    @if (hasSalary()) {
+      <div class="calculator-results">
+        <p-divider class="results-divider"></p-divider>
+
+        <h3 class="results-title">Расчет налогов:</h3>
+        <div class="tax-breakdown">
+          @for (bracket of appliedBrackets(); track bracket.rate + bracket.amount) {
+            <div class="tax-bracket-item">
+              <span class="bracket-rate">{{ bracket.rate * 100 }}%</span>
+              <span class="bracket-amount">{{ formatNumber(bracket.amount) }} руб.</span>
+              <span class="bracket-tax">{{ formatNumber(bracket.tax) }} руб.</span>
+            </div>
+          }
+        </div>
+
+        <p-divider class="results-divider"></p-divider>
+
+        <div class="total-section">
+          <div class="total-row">
+            <span class="total-label">Всего налогов:</span>
+            <span class="total-tax-amount">{{ formatNumber(totalTax()) }} руб.</span>
+          </div>
+          <div class="final-amount-section">
+            <h2 class="final-amount">На руки: {{ formatNumber(netSalary()) }} руб.</h2>
+          </div>
+        </div>
+      </div>
+    }
+  </p-card>
+</div>
