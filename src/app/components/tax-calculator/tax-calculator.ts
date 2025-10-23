@@ -15,7 +15,7 @@ import { Footer } from '../footer/footer';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TaxCalculator {
-  monthlySalary = signal<number>(0);
+  monthlySalary = signal<number | null>(null);
 
   private taxBrackets: TaxBracket[] = [
     { rate: 0.13, min: 0, max: 200000, description: 'до 200 тыс. руб./мес' },
@@ -57,11 +57,13 @@ export class TaxCalculator {
   });
 
   netSalary = computed(() => {
-    return this.monthlySalary() - this.totalTax();
+    const salary = this.monthlySalary();
+    return salary ? salary - this.totalTax() : 0;
   });
 
   hasSalary = computed(() => {
-    return this.monthlySalary() > 0;
+    const salary = this.monthlySalary();
+    return !!salary && salary > 0;
   });
 
   formatNumber(value: number): string {

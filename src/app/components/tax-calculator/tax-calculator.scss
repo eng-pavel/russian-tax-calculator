@@ -8,7 +8,6 @@
   padding: 2rem;
   max-width: 600px;
   margin: 0 auto;
-  /* flex: 1; -- теперь это задаётся у .main-content, но можно оставить */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -36,7 +35,7 @@
 
   .input-hint {
     display: block;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     color: var(--text-secondary-color);
     font-size: 0.875rem;
   }
