@@ -3,13 +3,13 @@
   padding: 1rem 0;
   border-top: 1px solid var(--surface-d);
   background-color: var(--surface-ground);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: sticky;
+  top: 100vh;
 
   @media (max-width: 768px) {
-    padding: 0.75rem 0; // Уменьшаем отступы в мобильной версии
+    padding: 0.75rem 0;
+    position: relative;
+    top: auto;
   }
 }
 
@@ -23,7 +23,7 @@
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 0.25rem; // Уменьшаем отступ между элементами
+    gap: 0.25rem;
     text-align: center;
     padding: 0 0.5rem;
   }
@@ -34,7 +34,7 @@
   font-size: 0.9rem;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem; // Чуть уменьшаем текст в мобильной версии
+    font-size: 0.8rem;
   }
 }
 

@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100vh;
 }
 
 .calculator-content {
@@ -130,16 +131,48 @@
   font-size: 1.5rem;
 }
 
-// Адаптивность
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary-color);
+
+  p {
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+// Адаптивность для мобильных
 @media (max-width: 768px) {
   .calculator-container {
-    padding: 1rem;
+    padding: 0.25rem;
+  }
+
+  .calculator-results {
+    margin-top: 1rem;
+  }
+
+  .results-divider {
+    margin: 1rem 0; // Уменьшаем отступ разделителей
+  }
+
+  .results-title {
+    margin-bottom: 0.75rem; // Уменьшаем отступ под "Расчет налогов"
+  }
+
+  .total-section {
+    margin-top: 0.75rem;
+  }
+
+  .total-row {
+    margin-bottom: 0.75rem; // Уменьшаем отступ под "Всего налогов"
   }
 
   .tax-bracket-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.25rem;
+    padding: 0.5rem 0; // Уменьшаем отступы между строками налогов
   }
 
   .bracket-amount {
@@ -153,5 +186,10 @@
 
   .final-amount {
     font-size: 1.25rem;
+  }
+
+  .final-amount-section {
+    padding: 1rem;
+    margin-top: 0.75rem;
   }
 }
