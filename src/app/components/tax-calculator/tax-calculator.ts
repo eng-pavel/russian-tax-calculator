@@ -4,10 +4,11 @@ import { Card } from 'primeng/card';
 import { InputNumber } from 'primeng/inputnumber';
 import { FormsModule } from '@angular/forms';
 import { Divider } from 'primeng/divider';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-tax-calculator',
-  imports: [Card, InputNumber, FormsModule, Divider],
+  imports: [Card, InputNumber, FormsModule, Divider, Footer],
   templateUrl: './tax-calculator.html',
   styleUrl: './tax-calculator.scss',
   standalone: true,

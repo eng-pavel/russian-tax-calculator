@@ -1,0 +1,50 @@
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--surface-d);
+  background-color: var(--surface-ground);
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+.footer-text {
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}
+
+.telegram-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+  }
+}
+
+.telegram-icon {
+  font-size: 1.1rem;
+}
