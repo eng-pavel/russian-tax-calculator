@@ -14,8 +14,9 @@
         inputId="salary"
         placeholder="Введите сумму"
         class="salary-input"
+        [useGrouping]="false"
       ></p-inputNumber>
-      <span class="input-hint">Введите число без запятых и пробелов</span>
+      <span class="input-hint">Введите число без разделителей</span>
     </div>
 
     @if (hasSalary()) {
